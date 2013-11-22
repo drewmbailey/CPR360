@@ -25,190 +25,103 @@
     <script src="js/main.js"></script>
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-
-      // ACCORDION 
-      $(function() {
-        $( "#accordion" ).accordion({autoHeight: "content" });
-      });
-
-      // YOUTUBE COMMENTS
-      function getYouTubeInfo() {
-              $.ajax({
-                      url: "http://gdata.youtube.com/feeds/api/videos/DMPKLJhT8uQ?v=2&alt=json",
-                      dataType: "jsonp",
-                      success: function (data) { parseresults(data); }
-              });
-      }
-
-      function parseresults(data) {
-              var title = data.entry.title.$t;
-              var description = data.entry.media$group.media$description.$t;
-              var viewcount = data.entry.yt$statistics.viewCount;
-              var author = data.entry.author[0].name.$t;
-              $('#title').html(title);
-              $('#description').html('<b>Description</b>: ' + description);
-              $('#extrainfo').html('<b>Author</b>: ' + author + '<br/><b>Views</b>: ' + viewcount);
-              getComments(data.entry.gd$comments.gd$feedLink.href + '&max-results=50&alt=json', 1);
-      }
-
-      function getComments(commentsURL, startIndex) {
-              $.ajax({
-                      url: commentsURL + '&start-index=' + startIndex,
-                      dataType: "jsonp",
-                      success: function (data) {
-                      $.each(data.feed.entry, function(key, val) {
-                              $('#comments').append('<br/>Author: ' + val.author[0].name.$t + ', Comment: ' + val.content.$t);
-                      });
-                      if ($(data.feed.entry).size() == 50) { getComments(commentsURL, startIndex + 50); }
-                      }
-              });
-      }
-
-      $(document).ready(function () {
-              getYouTubeInfo();
-      });
-      </script>
+    <script src="js/custom.js"></script>
 
   </head>
   <body>
+
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header>
-      <div id="headerWrap" class="span12">
-        <h1 class="span11 offset1">CPR 360</h1>
-      </div>
-    </header>
+    <div id="mainWrap">
+      
+      <header>
+        <div id="headerWrap" class="span12">
+          <h1 class="span11 offset1">CPR 360</h1>
+        </div>
+      </header>
 
-    <main>
-      <div id="mainWrap">
-        <div id="youtubeMain" class="span7 offset1">
-          <h2>Video Title</h2>
-          <div id="player"></div>
-          <script>
-            // 2. This code loads the IFrame Player API code asynchronously.
-            var tag = document.createElement('script');
+      <main>
+          <div id="youtubeMain" class="span7 offset1">
+            <h2>Video Title</h2>
+            <div id="player"></div>
 
-            tag.src = "https://www.youtube.com/iframe_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+              <!-- JQUERY INSERTS IFRAME HERE -->
+            
+          </div> <!-- end #youtubeMain -->
+      </main>
 
-            // 3. This function creates an <iframe> (and YouTube player)
-            //    after the API code downloads.
-            var player;
-            function onYouTubeIframeAPIReady() {
-              player = new YT.Player('player', {
-                height: '390',
-                width: '640',
-                videoId: 'DMPKLJhT8uQ',
-                events: {
-                  'onReady': onPlayerReady,
-                  'onStateChange': onPlayerStateChange
-                }
-              });
-            }
-
-            // 4. The API will call this function when the video player is ready.
-            function onPlayerReady(event) {
-              event.target.playVideo();
-            }
-
-            // 5. The API calls this function when the player's state changes.
-            //    The function indicates that when playing a video (state=1),
-            //    the player should play for six seconds and then stop.
-            var done = false;
-            function onPlayerStateChange(event) {
-              if (event.data == YT.PlayerState.PLAYING && !done) {
-                setTimeout(stopVideo, 6000);
-                done = true;
-              }
-            }
-            function stopVideo() {
-              player.stopVideo();
-            }
-          </script>
-        </div> <!-- end #youtubeMain -->
-      </div> <!-- end #mainWrap -->
-    </main>
-
-    <div id="accordionSidebar">
-      <div id="accordionWrap" class="span6 offset1">
-        <div id="accordion">
-          <h3>Section 1</h3>
-          <div>
-            <img src="http://i1.ytimg.com/vi/DMPKLJhT8uQ/default.jpg" width="120">
-            <p>
-            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-            </p>
-          </div>
-          <h3>Section 2</h3>
-          <div>
-            <img src="http://i1.ytimg.com/vi/NT-DVR8Mqts/default.jpg" width="120">
-            <p>
-            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-            velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-            suscipit faucibus urna.
-            </p>
-          </div>
-          <h3>Section 3</h3>
-          <div>
-            <img src="http://i1.ytimg.com/vi/haycL41dAhg/default.jpg" width="120">
-            <p>
-            Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-            Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-            ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-            lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-            </p>
-            <ul>
-              <li>List item one</li>
-              <li>List item two</li>
-              <li>List item three</li>
-            </ul>
-          </div>
-          <h3>Section 4</h3>
-          <div>
-            <img src="http://i1.ytimg.com/vi/yqzQUOW9yK8/default.jpg" width="120">
-            <p>
-            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-            faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-            mauris vel est.
-            </p>
-            <p>
-            Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos.
-            </p>
+      <div id="accordionSidebar">
+        <div id="accordionWrap" class="span6 offset1">
+          <div id="accordion">
+            <h3>Section 1</h3>
+            <div>
+              <a href="DMPKLJhT8uQ" class="vid_button" id="mostRecent"><img src="http://i1.ytimg.com/vi/DMPKLJhT8uQ/default.jpg" width="120"></a>
+              <p>
+              Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+              ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+              amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+              odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+              </p>
+            </div>
+            <h3>Section 2</h3>
+            <div>
+              <a href="-oTndxsUdnk" class="vid_button"><img src="http://i1.ytimg.com/vi/-oTndxsUdnk/default.jpg" width="120"></a>
+              <p>
+              Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+              purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+              velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+              suscipit faucibus urna.
+              </p>
+            </div>
+            <h3>Section 3</h3>
+            <div>
+              <a href="q0kPYOzgNyQ" class="vid_button"><img src="http://i1.ytimg.com/vi/q0kPYOzgNyQ/default.jpg" width="120"></a>
+              <p>
+              Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+              Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+              ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+              lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+              </p>
+              <ul>
+                <li>List item one</li>
+                <li>List item two</li>
+                <li>List item three</li>
+              </ul>
+            </div>
+            <h3>Section 4</h3>
+            <div>
+              <a href="VMoex059t3E" class="vid_button"><img src="http://i1.ytimg.com/vi/VMoex059t3E/default.jpg" width="120"></a>
+              <p>
+              Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+              et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+              faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+              mauris vel est.
+              </p>
+              <p>
+              Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+              Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+              inceptos himenaeos.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div id="comments" class="span7 offset1">
-      <h2>Comments</h2>
-<!--       <div id="comment">
-        <h4 id="author"></h4>
-        <div id="thumb"></div>
-        <p id="comment"></p>
-      </div> -->
+      <div id="comments" class="span7 offset1">
+        <div align="center">
+          <!-- <div id="title" style="color: #dddddd">Could not find a title</div><br/> -->
+            <div id="description" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find a description</div>
+            <div id="extrainfo" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find extra information</div>
+            <!-- <div id="comments" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find comments</div> -->
+          </div>
+        
+        <h2>Comments</h2>
 
-      <div align="center">
-        <div id="title" style="color: #dddddd">Could not find a title</div><br/>
-<!--           <iframe title="Youtube Video Player" width="640" height="390" src="http://www.youtube.com/embed/DMPKLJhT8uQ?fs=1&autoplay=1&loop=0" frameborder="0" allowfullscreen style="border: 1px solid black"></iframe>
-          <br/><br/> -->
-          <div id="description" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find a description</div>
-          <div id="extrainfo" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find extra information</div>
-          <div id="comments" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find comments</div>
         </div>
       </div>
-
-    </div>
+    </div> <!-- end #mainWrap -->  
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
    <!-- <script>

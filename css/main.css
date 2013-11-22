@@ -1,10 +1,12 @@
+#mainWrap{
+	width: 90em;
+	margin: 0 auto;
+}
+
 #headerWrap{
 	width: 100%;
 }
 
-header h1{
-  margin: 1em 0;
-}
 
 .ui-accordion-content{
 
