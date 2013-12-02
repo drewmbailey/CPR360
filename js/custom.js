@@ -4,7 +4,9 @@ jQuery(function($){
   $( "#accordion" ).accordion({autoHeight: "content" });
 
 //  LOAD MOST RECENT VIDEO ON PAGE LOAD
-  $("#mostRecent").click();
+  $(document).ready(function() {
+    $("#mostRecent").click();
+  });
   
 //  CHANGE VIDEO BY CLICKING THUMBNAIL LINK
   $('.vid_button').click(function(e){
