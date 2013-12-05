@@ -1,3 +1,20 @@
+body{
+    background: url("../img/background.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header{
+	height: 277px;
+    background: url("../img/headerBackground.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 #mainWrap{
 	width: 90em;
 	margin: 0 auto;
@@ -25,4 +42,8 @@
 
 #accordionWrap{
   margin-top: 3.5em;
+}
+
+p, h1, h2{
+	color: #fff;
 }
