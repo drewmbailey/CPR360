@@ -21,11 +21,13 @@ jQuery(function($){
     $('#player').html(htm);
       return false;
 
-  // YOUTUBE COMMENTS
+  });
+  
+// YOUTUBE COMMENTS
     function getYouTubeInfo() {
       $.ajax({
-        //url: "http://gdata.youtube.com/feeds/api/videos/" + SetURL + "?v=2&alt=json",
-        url: SetURL,
+        url: "http://gdata.youtube.com/feeds/api/videos/DMPKLJhT8uQ?v=2&alt=json",
+        // url: SetURL,
         dataType: "jsonp",
         success: function (data) { parseresults(data); }
       });
@@ -56,7 +58,4 @@ jQuery(function($){
     }
 
     getYouTubeInfo();
-
-  });
-
 });    

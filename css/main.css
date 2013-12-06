@@ -1,22 +1,38 @@
 /*UNIVERSAL*/
 
+html{
+  height: 100%;
+}
+
 body{
+    height: 100%;
     background: url("../img/background.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
-    height:2000px;
 }
 
 #mainWrap{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -60px; /* the bottom margin is the negative value of the footer's height */
+}
+
+#contentWrap{
   width: 1000px;
   margin: 0 auto;
 }
 
-p, h1, h2, h3{
+p, h1, h3{
   color: #fff;
+}
+
+h2{
+  color: #5456a1;
+  font-family: Arial, sans-serif;
+  font-size: 1.8em;
 }
 
 /*HEADER*/
@@ -24,39 +40,59 @@ p, h1, h2, h3{
 header{
   width: 100%;
   margin: 0 auto;
-  background: black;
+  background-color: black;
   border-bottom: solid 3px #5456a1;
+  background: url("../img/headerBackground.png") no-repeat center; 
 }
 
 #headerWrap{
-  width: 1450px;
+  width: 525px;
   height: 277px;
   margin: 0 auto;
-  overflow: hidden;
-    background: url("../img/headerBackground.png") center; /*no-repeat center center fixed;*/
-    /*-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
+}
+
+#headerWrap img{
+  width: 525px;
+  margin-top: 40px;
 }
 
 /*MAIN CONTENT*/
 
 main{
-  width: 650px;
+  margin-top: 40px;
+  width: 640px;
   float: left;
+  background-image: url(../img/commentsBackground.png);
+  background-size: auto, cover;
 }
 
 #youtubeMain{
   float: left;
+  clear: right;
   margin-left: 0;
 }
 
+#player{
+  margin-bottom: 20px;
+}
+
+#description{
+  width: 600px;
+  margin-top: 40px !important;
+  margin: auto;
+  }
+
 #comments{
-  width: 650px;
+  width: 600px;
+  margin-top: 40px !important;
+  margin: auto;
+  border-top: solid 3px #5456a1;
+}
+
+#comments h2{
+  width: 600px;
   float: left;
-  margin-top: 2em;
-  margin-bottom: 1em;
+  text-align: left;
 }
 
 /*SIDEBAR*/
@@ -88,5 +124,29 @@ main{
 #accordion div{
   padding-left: 0;
   width: 340px;
+}
+
+ /* FOOTER*/
+
+footer, .push{
+  height: 60px;
+  clear: both;
+}
+
+ footer{
+  height: 60px;
+  left: 0;
+  width: 100%;
+  margin: auto;
+  border-top: solid 3px #5456a1;
+  background: url("../img/footerBackground.png") no-repeat center; 
+  background-size: 1450px;
+  background-color: black;
+}
+
+#footerWrap{
+  width: 1000px;
+  height: 60px;
+  margin: auto;
 }
 
