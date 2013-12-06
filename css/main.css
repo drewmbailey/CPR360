@@ -1,38 +1,74 @@
+/*UNIVERSAL*/
+
 body{
     background: url("../img/background.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
 
-header{
-	height: 277px;
-    background: url("../img/headerBackground.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    height:2000px;
 }
 
 #mainWrap{
-	width: 90em;
-	margin: 0 auto;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+p, h1, h2, h3{
+  color: #fff;
+}
+
+/*HEADER*/
+
+header{
+  width: 100%;
+  margin: 0 auto;
+  background: black;
+  border-bottom: solid 3px #5456a1;
 }
 
 #headerWrap{
-	width: 100%;
+  width: 1450px;
+  height: 277px;
+  margin: 0 auto;
+  overflow: hidden;
+    background: url("../img/headerBackground.png") center; /*no-repeat center center fixed;*/
+    /*-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
 }
 
+/*MAIN CONTENT*/
 
-.ui-accordion-content{
+main{
+  width: 650px;
+  float: left;
+}
 
+#youtubeMain{
+  float: left;
+  margin-left: 0;
 }
 
 #comments{
-  clear: left;
+  width: 650px;
+  float: left;
   margin-top: 2em;
   margin-bottom: 1em;
+}
+
+/*SIDEBAR*/
+
+#accordionSidebar{
+  width: 340px;
+  float: right;
+  margin-left: 10px;
+}
+
+.ui-accordion-content{
+
 }
 
 #accordion img{
@@ -44,6 +80,13 @@ header{
   margin-top: 3.5em;
 }
 
-p, h1, h2{
-	color: #fff;
+#accordion h3{
+  border-top: solid 3px #5456a1;
+  padding-left: 0;
 }
+
+#accordion div{
+  padding-left: 0;
+  width: 340px;
+}
+
