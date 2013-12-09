@@ -50,26 +50,46 @@
               <!-- JQUERY INSERTS IFRAME HERE -->
             
           </div> <!-- end #youtubeMain -->
-          
-          <div id="description">
-            <div align="center">
-              <!-- <div id="title" style="color: #dddddd">Could not find a title</div><br/> -->
-                <div id="description" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find a description</div>
-                <div id="extrainfo" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find extra information</div>
-                <!-- <div id="comments" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find comments</div> -->
-    <!--           </div> -->
+
+          <div id="youtubeContent">
+            <div id="title">
+              <h2></h2>
             </div>
-          </div> <!-- end #description -->    
-          
-          <div id="comments">
-            <h2>Comments:</h2>
-            <div></div>
+
+            <div id="share">
+              <img id="shareButton" src="img/shareThis.png" alt="share button">
+              <div id="sharePopup">
+                <ul>
+                  <li><a href="http://twitter.com/home?status=http://youtu.be/-oTndxsUdnk"><div class="shareItems" id="twitterButton"></div></a></li>
+                  <li><a href=""><div class="shareItems" id="vimeoButton"></div></a></li>
+                  <li><a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://youtu.be/-oTndxsUdnk&p[images][0]=&p[title]=&p[summary]="><div class="shareItems" id="facebookButton"></div></a></li>
+                  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://youtu.be/DMPKLJhT8uQ&title=&summary=&source="><div class="shareItems" id="linkedinButton"></div></a></li>
+                  <li><a href="https://www.tumblr.com/login?share_redirect_to=%2Fshare%2Flink%3Furl%3Dhttp%253A%252F%252Fyoutu.be%252FDMPKLJhT8uQ"><div class="shareItems" id="tumblrButton"></div></a></li>
+                  <li><a href="https://plus.google.com/share?url=http://youtu.be/-oTndxsUdnk"><div class="shareItems" id="gplusButton"></div></a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="description">
+              <div align="center">
+                  <div id="description" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find a description</div>
+                  <div id="extrainfo" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find extra information</div>
+                  <!-- <div id="comments" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find comments</div> -->
+      <!--           </div> -->
+              </div>
+            </div> <!-- end #description -->    
+            
+            <div id="comments">
+              <h2>Comments:</h2>
+              <div></div>
+            </div>
           </div>
 
         </main> <!-- end main -->
 
         <div id="accordionSidebar">
           <div id="accordionWrap">
+            <h2>Videos</h2>
             <div id="accordion">
               <h3>Section 1</h3>
               <div>
@@ -121,9 +141,15 @@
                 inceptos himenaeos.
                 </p>
               </div>
-            </div>
+            </div> <!-- end #accordion -->
+
+          </div> <!-- end #accordionWrap -->
+
+          <div id="resources">
+              
           </div>
-        </div>
+          
+        </div> <!-- end #accordionSidebar -->
 
         <div class="push"></div>
 

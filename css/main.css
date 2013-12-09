@@ -67,8 +67,14 @@ main{
   margin-top: 40px;
   width: 640px;
   float: left;
+}
+
+#youtubeContent{
   background-image: url(../img/commentsBackground.png);
   background-size: auto, cover;
+  margin: 390px 0 20px 0;
+  position: relative;
+  padding-bottom: 20px;
 }
 
 #youtubeMain{
@@ -79,6 +85,71 @@ main{
 
 #player{
   margin-bottom: 20px;
+}
+
+#title h2{
+  color: #000;
+  font-size: 24px;
+  line-height: 20px;
+  margin-left: 20px;
+  width: 500px;
+}
+
+#shareButton{
+  position: absolute; 
+  top: 40px;
+  right: 20px;
+}
+
+#sharePopup{
+  position: absolute;
+  top: -78px;
+  right: -6px;
+  display: none;
+  background-image: url(../img/shareThisBackground.png);
+  height: 116px;
+  width: 163px;
+}
+
+#sharePopup ul{
+  width: 163px;
+  margin: -4px 0 0 7px;
+  padding: 0;
+}
+
+#sharePopup ul li{
+  list-style: none;
+  margin: 10px;
+  float: left;
+}
+
+#twitterButton{
+  background: url(../img/shareThisIcons.png) 0 3px;
+}
+
+#vimeoButton{
+  background: url(../img/shareThisIcons.png) 78px 3px;
+}
+
+#facebookButton{
+  background: url(../img/shareThisIcons.png) 29px 3px;
+}
+
+#linkedinButton{
+background: url(../img/shareThisIcons.png) 0 28px;
+}
+
+#tumblrButton{
+  background: url(../img/shareThisIcons.png) 76px 28px;
+}
+
+#gplusButton{
+  background: url(../img/shareThisIcons.png) 29px 30px;
+}
+
+.shareItems{
+  height: 30px;
+  width: 30px;
 }
 
 #description{
@@ -119,6 +190,7 @@ main{
   width: 340px;
   float: right;
   margin-left: 10px;
+  min-height: 600px
 }
 
 .ui-accordion-content{
@@ -142,6 +214,17 @@ main{
 #accordion div{
   padding-left: 0;
   width: 340px;
+}
+
+.vid_button img{
+    cursor: pointer;
+}
+
+#resources{
+  background-image: url(../img/resourcesBackground.png);
+  background-size: auto, cover;  
+  height: 127px;
+  width: 326px;
 }
 
  /* FOOTER*/
