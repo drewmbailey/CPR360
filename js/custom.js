@@ -1,13 +1,11 @@
 jQuery(function($){
   console.log('document ready');
-// ACCORDION 
+  // ACCORDION 
   $( '#accordion' ).accordion({autoHeight: 'content' });
   
   // CHANGE VIDEO BY CLICKING THUMBNAIL LINK
   $('.vid_button').on('click', function(){
-    // e.preventDefault();
     console.log('video clicked');
-
     console.log('this = ' + $(this).html());
 
     $('#accordion .vid_button').removeClass('active');
@@ -19,7 +17,6 @@ jQuery(function($){
 
     console.log('URL = ' + URL);
     console.log('SetURL = ' + SetURL);
-
     getYouTubeInfo();
 
     $('#player').html(htm);
@@ -41,6 +38,7 @@ jQuery(function($){
       dataType: 'jsonp',
       success: function (data) {
         console.log('success');
+        $('#comments div').empty();
         parseresults(data);
       },
       failure: function (data) {
@@ -68,7 +66,7 @@ jQuery(function($){
       dataType: 'jsonp',
       success: function (data) {
       $.each(data.feed.entry, function(key, val) {
-        $('#comments').append('<h4>' + val.author[0].name.$t + '</h4>' + '<p>' + val.content.$t + '</p>');
+        $('#comments div').append('<h4>' + val.author[0].name.$t + '</h4>' + '<p>' + val.content.$t + '</p>');
       });
       if ($(data.feed.entry).size() == 50) { getComments(commentsURL, startIndex + 50); }
       }
