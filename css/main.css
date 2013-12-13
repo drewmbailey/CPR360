@@ -1,5 +1,10 @@
 /*UNIVERSAL*/
 
+@font-face {
+  font-family: 'futura';
+  src: url('../fonts/FuturaStd-Medium.eot?') format('eot'), url('../fonts/FuturaStd-Medium.woff') format('woff'), url('../fonts/FuturaStd-Medium.ttf') format('truetype');
+}
+
 html{
   height: 100%;
 }
@@ -23,6 +28,7 @@ body{
 #contentWrap{
   width: 1000px;
   margin: 0 auto;
+  position: relative;
 }
 
 p, h1, h3{
@@ -54,11 +60,33 @@ header{
   width: 525px;
   height: 277px;
   margin: 0 auto;
+  position: relative;
 }
 
 #headerWrap img{
   width: 525px;
   margin-top: 40px;
+}
+
+#headerText{
+  background: url(../img/headertextBackground.png) no-repeat center;
+  background-size: cover;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 154px;
+  width: 208px;
+  position: absolute;
+  top: 0;
+  right: -285px;
+}
+
+#headerText p{
+  font-family: 'futura';
+  margin: 1em 1.4em;
+  color: #000;
+  font-size: .8em;
+  line-height: 1.25em;
 }
 
 /*MAIN CONTENT*/
@@ -69,12 +97,22 @@ main{
   float: left;
 }
 
+main p{
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+iframe{
+  z-index: 100;
+}
+
 #youtubeContent{
   background-image: url(../img/commentsBackground.png);
   background-size: auto, cover;
   margin: 390px 0 20px 0;
   position: relative;
   padding-bottom: 20px;
+  min-height: 400px;
 }
 
 #youtubeMain{
@@ -89,9 +127,8 @@ main{
 
 #title h2{
   color: #000;
-  font-size: 24px;
-  line-height: 20px;
-  margin-left: 20px;
+  font-size: 1.5em;
+  margin: 0 0 0 .8em;
   width: 500px;
 }
 
@@ -99,6 +136,7 @@ main{
   position: absolute; 
   top: 40px;
   right: 20px;
+  cursor: pointer;
 }
 
 #sharePopup{
@@ -109,6 +147,7 @@ main{
   background-image: url(../img/shareThisBackground.png);
   height: 116px;
   width: 163px;
+  z-index: 500;
 }
 
 #sharePopup ul{
@@ -157,9 +196,9 @@ background: url(../img/shareThisIcons.png) 0 28px;
   margin-top: 40px !important;
   margin: auto;
   color: #000;
-  font-size: 14px;
-  line-height: 20px;
-  }
+  font-size: 1em;
+  line-height: 1.4em;
+}
 
 #comments{
   width: 600px;
@@ -172,10 +211,17 @@ background: url(../img/shareThisIcons.png) 0 28px;
   width: 600px;
   float: left;
   text-align: left;
+  font-size: 1.5em;
+  margin: 1em 0 0 0;
+  padding: 0;
 }
 
 #comments p{
   color: #000;
+}
+
+.ui-accordion .ui-accordion-content{
+  padding-left: 0 !important;
 }
 
 #accordionWrap h2{
@@ -202,18 +248,45 @@ background: url(../img/shareThisIcons.png) 0 28px;
   margin: 0 1em 1em 0;  
 }
 
-#accordionWrap{
-  margin-top: 3.5em;
+#accordion li{
+  color: #fff;
 }
 
-#accordion h3{
+#accordion p{
+  margin-top: 0;
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+#accordionWrap{
+  margin-top: 2.4em;
+}
+
+#accordionWrap h2{
+  font-size: 1.4em !important;
+}
+
+#accordionWrap h3{
   border-top: solid 3px #5456a1;
   padding-left: 0;
+  font-size: 1.2em !important;
 }
 
 #accordion div{
   padding-left: 0;
   width: 340px;
+  position: relative;
+}
+
+.videoThumb{
+  position: relative;
+}
+
+.thumbPlayOverlay{
+  width: 100px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
 }
 
 .vid_button img{
@@ -221,10 +294,34 @@ background: url(../img/shareThisIcons.png) 0 28px;
 }
 
 #resources{
-  background-image: url(../img/resourcesBackground.png);
-  background-size: auto, cover;  
-  height: 127px;
-  width: 326px;
+  background: url(../img/resourcesBackground.png) no-repeat center;
+  background-size: cover;  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 136px;
+  width: 340px;
+  margin-bottom: 73px;
+  margin-top: -207px;
+  position: absolute; 
+  bottom: 7px;
+  right: -20px;
+  padding-left: 20px;
+}
+
+#resources h3{
+  margin: .5em 0 .5em 0;
+}
+
+#resources ul{
+  list-style: none;
+  padding: 0;
+  margin: .5em 0 0 0;
+}
+
+#resources ul li a{
+  text-decoration: none;
+  color: #fff
 }
 
  /* FOOTER*/
@@ -243,6 +340,59 @@ footer, .push{
   background: url("../img/footerBackground.png") no-repeat center; 
   background-size: 1450px;
   background-color: black;
+  position: relative;
+}
+
+#copyright, #follow p{
+  font-size: .9em;
+  font-family: "futura";
+}
+
+#copyright{
+  position: absolute;
+  top: 10px;
+  left: 450px;
+}
+
+#follow{
+  position: absolute;
+  width: 300px;
+  top: 0;
+  right: 550px;
+  height: 60px;
+  padding: 0;
+
+}
+
+#follow p{
+  width: 100px;
+  margin: 0;
+}
+
+#follow ul{
+  width: 100px;
+  height: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#follow ul li a{
+  width: 30px;
+  height: 30px;
+  float: right;
+}
+
+#followFacebook{
+  background: url(../img/follow.png) 0 0px no repeat;
+}
+
+#followTwitter{
+  background: url(../img/follow.png) 0 30px no repeat;
+}
+
+#followYoutube{
+  background: url(../img/follow.png) 0 60px no repeat;
 }
 
 #footerWrap{

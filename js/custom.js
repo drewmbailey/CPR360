@@ -1,7 +1,26 @@
 jQuery(function($){
   console.log('document ready');
-  // ACCORDION 
-  $( "#accordion" ).accordion({heightstyle: "content" });
+  
+  // $('iframe').each(function(){
+  //         var url = $(this).attr("src");
+  //         var char = "?";
+  //         if(url.indexOf("?") != -1){
+  //                 var char = "&";
+  //          }
+         
+  //         $(this).attr("src",url+char+"?wmode=transparent");
+  //   });
+
+  // ACCORDION
+
+  $( "#accordion" ).accordion({heightStyle: "content"});
+
+  $( "#comments" ).accordion({header: "h2",
+    heightStyle: "content",
+    active: false, 
+    collapsible: true,
+    active: 1
+   });
   
   // CHANGE VIDEO BY CLICKING THUMBNAIL LINK
   $('.vid_button').on('click', function(){
@@ -12,7 +31,7 @@ jQuery(function($){
     $(this).addClass('active');
 
     var URL = $(this).attr('data-link');
-    var htm = '<iframe id="player" frameborder="0" allowfullscreen="1" title="YouTube video player" width="640" height="390" src="https://www.youtube.com/embed/' + URL + '?enablejsapi=1"></iframe>';
+    var htm = '<iframe id="player" frameborder="0" allowfullscreen="1" title="YouTube video player" width="640" height="390" src="https://www.youtube.com/embed/' + URL + '?enablejsapi=1&wmode=transparent"></iframe>';
     var SetURL = 'http://gdata.youtube.com/feeds/api/videos/' + URL + '?v=2&alt=json';
 
     console.log('URL = ' + URL);
@@ -102,7 +121,6 @@ jQuery(function($){
   //SHARE LINK
   $("#shareButton").on("click", function(){
     console.log("button clicked");
-    //$("#sharePopup").css("display", "inline");
     $("#sharePopup").show();
   });
 

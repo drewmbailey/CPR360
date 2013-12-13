@@ -12,8 +12,8 @@
 
     <link rel="stylesheet" href="js/jquery-ui-1.10.3.custom.min.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">-->
     <link rel="stylesheet" href="css/main.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -24,7 +24,7 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="js/modernizr-2.6.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!--<script src="js/bootstrap.min.js"></script>-->
     <script src="js/custom.js"></script>
 
   </head>
@@ -37,6 +37,9 @@
       <header>
         <div id="headerWrap">
           <img src="img/headerLogo.png">
+          <div id="headerText">
+            <p>A collaboration among F.I.E.R.C.E. (Foundation for International Emergency Medicine Education), First Responders Network, S.H.A.R.E. (Save Hearts in Arizona Registry & Education), HeartRescue Project, and ZOLL.</p>
+          </div>
         </div>
       </header>
 
@@ -44,7 +47,6 @@
 
         <main>
           <div id="youtubeMain">
-  <!--             <h2>Video Title</h2> -->
             <div id="player"></div>
 
               <!-- JQUERY INSERTS IFRAME HERE -->
@@ -72,19 +74,19 @@
 
             <div id="description">
               <div align="center">
-                  <div id="description" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find a description</div>
-                  <div id="extrainfo" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find extra information</div>
-                  <!-- <div id="comments" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find comments</div> -->
-      <!--           </div> -->
+                <div id="description" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find a description</div>
+                <div id="extrainfo" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find extra information</div>
+                <!-- <div id="comments" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find comments</div> -->
+    <!--           </div> -->
               </div>
             </div> <!-- end #description -->    
             
-            <div id="comments">
-              <h2>Comments:</h2>
-              <div></div>
-            </div>
-          </div>
+              <div id="comments">
+                <h2>Comments:</h2>
+                <div></div>
+              </div>
 
+          </div>
         </main> <!-- end main -->
 
         <div id="accordionSidebar">
@@ -93,7 +95,7 @@
             <div id="accordion">
               <h3>Section 1</h3>
               <div>
-                <a id="mostRecent" class="vid_button" data-link="DMPKLJhT8uQ" ><img src="http://i1.ytimg.com/vi/DMPKLJhT8uQ/default.jpg" width="120"></a>
+                <div class="videoThumb"><a id="mostRecent" class="vid_button" data-link="DMPKLJhT8uQ" ><img src="http://i1.ytimg.com/vi/DMPKLJhT8uQ/default.jpg" width="120"><img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png"></a></div>
                 <p>
                 Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
                 ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
@@ -103,7 +105,7 @@
               </div>
               <h3>Section 2</h3>
               <div>
-                <a class="vid_button" data-link="-oTndxsUdnk" ><img src="http://i1.ytimg.com/vi/-oTndxsUdnk/default.jpg" width="120"></a>
+                <div class="videoThumb"><a class="vid_button" data-link="-oTndxsUdnk" ><img src="http://i1.ytimg.com/vi/-oTndxsUdnk/default.jpg" width="120"><img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png"></a></div>
                 <p>
                 Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
                 purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
@@ -113,7 +115,7 @@
               </div>
               <h3>Section 3</h3>
               <div>
-                <a class="vid_button" data-link="q0kPYOzgNyQ" ><img src="http://i1.ytimg.com/vi/q0kPYOzgNyQ/default.jpg" width="120"></a>
+                <div class="videoThumb"><a class="vid_button" data-link="q0kPYOzgNyQ" ><img src="http://i1.ytimg.com/vi/q0kPYOzgNyQ/default.jpg" width="120"><img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png"></a></div>
                 <p>
                 Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
                 Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
@@ -128,7 +130,7 @@
               </div>
               <h3>Section 4</h3>
               <div>
-                <a class="vid_button" data-link="VMoex059t3E" ><img src="http://i1.ytimg.com/vi/VMoex059t3E/default.jpg" width="120"></a>
+                <div class="videoThumb"><a class="vid_button" data-link="VMoex059t3E" ><img src="http://i1.ytimg.com/vi/VMoex059t3E/default.jpg" width="120"><img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png"></a></div>
                 <p>
                 Cras dictum. Pellentesque habitant morbi tristique senectus et netus
                 et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
@@ -145,18 +147,34 @@
 
           </div> <!-- end #accordionWrap -->
 
-          <div id="resources">
-              
-          </div>
-          
         </div> <!-- end #accordionSidebar -->
+        
+        <div id="resources">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="mailto:info@cpr360.org" target="_top">info@cpr360.org</a></li>
+            <li><a href="#">www.loremipsem.com</a></li>
+            <li><a href="#">www.loremipsem.com</a></li>
+            <li><a href="#">www.loremipsem.com</a></li>
+          </ul>
+        </div>
 
         <div class="push"></div>
 
       </div> <!-- end #contentWrap -->
 
       <footer>
-        <div id="footerWrap"><img href="img/footerBackground.png"></div>
+        <div id="footerWrap">
+          <p id="copyright">Copyright 2013 CPR360&deg;</p>
+          <div id="follow">
+            <p>Follow CPR360&deg;</p>
+            <ul>
+              <li><a id="followFacebook" href=""></a></li>
+              <li><a id="followTwitter" href=""></a></li>
+              <li><a id="followYoutube" href=""></a></li>
+            </ul>
+          </div>
+        </div>
       </footer>  
 
     </div> <!-- end #mainWrap -->
