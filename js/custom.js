@@ -1,6 +1,11 @@
 jQuery(function($){
   console.log('document ready');
+
+  //FANCYBOX
+
+  $(".fancybox").fancybox();
   
+  //MAKE IFRAME FALL UNDER SOCIAL MEADIA POPUP
   // $('iframe').each(function(){
   //         var url = $(this).attr("src");
   //         var char = "?";
@@ -12,14 +17,19 @@ jQuery(function($){
   //   });
 
   // ACCORDION
+  var icons = {
+   header: "iconClosed",    // custom icon class
+   activeHeader: "iconOpen" // custom icon class
+  };
 
-  $( "#accordion" ).accordion({heightStyle: "content"});
+  $( "#accordion" ).accordion({heightStyle: "content", icons: icons});
 
   $( "#comments" ).accordion({header: "h2",
     heightStyle: "content",
     active: false, 
     collapsible: true,
-    active: 1
+    active: 1,
+    icons: icons
    });
   
   // CHANGE VIDEO BY CLICKING THUMBNAIL LINK
@@ -118,29 +128,29 @@ jQuery(function($){
     });
   }
 
-  //SHARE LINK
-  $("#shareButton").on("click", function(){
-    console.log("button clicked");
-    $("#sharePopup").show();
-  });
+  // //SHARE LINK
+  // $("#shareButton").on("click", function(){
+  //   console.log("button clicked");
+  //   $("#sharePopup").show();
+  // });
 
-  $(document).on("click", function(e) {
-    if (e.target.id != "shareButton" && !$("#shareButton").find(e.target).length) {
-      $("#sharePopup").hide();
-    }
-  });
+  // $(document).on("click", function(e) {
+  //   if (e.target.id != "shareButton" && !$("#shareButton").find(e.target).length) {
+  //     $("#sharePopup").hide();
+  //   }
+  // });
 
-  var shareList =
-    '<ul>' 
-      + '<li><a href="http://twitter.com/home?status=http://youtu.be/' + youtubeID + '"><div class="shareItems" id="twitterButton"></div></a></li>'
-      + '<li><a href=""><div class="shareItems" id="vimeoButton"></div></a></li>'
-      + '<li><a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://youtu.be/-oTndxsUdnk&p[images][0]=&p[title]=&p[summary]="><div class="shareItems" id="facebookButton"></div></a></li>'
-      + '<li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://youtu.be/DMPKLJhT8uQ&title=&summary=&source="><div class="shareItems" id="linkedinButton"></div></a></li>'
-      + '<li><a href="https://www.tumblr.com/login?share_redirect_to=%2Fshare%2Flink%3Furl%3Dhttp%253A%252F%252Fyoutu.be%252FDMPKLJhT8uQ"><div class="shareItems" id="tumblrButton"></div></a></li>'
-      + '<li><a href="https://plus.google.com/share?url=http://youtu.be/-oTndxsUdnk"><div class="shareItems" id="gplusButton"></div></a></li>'
-    + '</ul>';
+  // var shareList =
+  //   '<ul>' 
+  //     + '<li><a href="http://twitter.com/home?status=http://youtu.be/' + youtubeID + '"><div class="shareItems" id="twitterButton"></div></a></li>'
+  //     + '<li><a href=""><div class="shareItems" id="vimeoButton"></div></a></li>'
+  //     + '<li><a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://youtu.be/-oTndxsUdnk&p[images][0]=&p[title]=&p[summary]="><div class="shareItems" id="facebookButton"></div></a></li>'
+  //     + '<li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://youtu.be/DMPKLJhT8uQ&title=&summary=&source="><div class="shareItems" id="linkedinButton"></div></a></li>'
+  //     + '<li><a href="https://www.tumblr.com/login?share_redirect_to=%2Fshare%2Flink%3Furl%3Dhttp%253A%252F%252Fyoutu.be%252FDMPKLJhT8uQ"><div class="shareItems" id="tumblrButton"></div></a></li>'
+  //     + '<li><a href="https://plus.google.com/share?url=http://youtu.be/-oTndxsUdnk"><div class="shareItems" id="gplusButton"></div></a></li>'
+  //   + '</ul>';
 
-  $("#sharePopup").html(shareList); 
-  console.log(shareList)
+  // $("#sharePopup").html(shareList); 
+  // console.log(shareList)
 
 });

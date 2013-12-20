@@ -81,13 +81,6 @@ header{
   right: -285px;
 }
 
-#headerText p{
-  font-family: 'futura';
-  margin: 1em 1.4em;
-  color: #000;
-  font-size: .8em;
-  line-height: 1.25em;
-}
 
 /*MAIN CONTENT*/
 
@@ -112,7 +105,6 @@ iframe{
   margin: 390px 0 20px 0;
   position: relative;
   padding-bottom: 20px;
-  min-height: 400px;
 }
 
 #youtubeMain{
@@ -198,9 +190,11 @@ background: url(../img/shareThisIcons.png) 0 28px;
   color: #000;
   font-size: 1em;
   line-height: 1.4em;
+  min-height: 140px;
 }
 
 #comments{
+  min-height: 65px;
   width: 600px;
   margin-top: 40px !important;
   margin: auto;
@@ -243,6 +237,10 @@ background: url(../img/shareThisIcons.png) 0 28px;
 
 }
 
+#accordion{
+    min-height: 700px;
+}
+
 #accordion img{
   float: left;
   margin: 0 1em 1em 0;  
@@ -260,6 +258,7 @@ background: url(../img/shareThisIcons.png) 0 28px;
 
 #accordionWrap{
   margin-top: 2.4em;
+  margin-bottom: 2.4em;
 }
 
 #accordionWrap h2{
@@ -276,6 +275,37 @@ background: url(../img/shareThisIcons.png) 0 28px;
   padding-left: 0;
   width: 340px;
   position: relative;
+}
+
+.iconOpen {
+    background:url(../img/arrowOpen.png) no-repeat !important;
+    background-size:20px !important;
+    width:20px;
+    height:20px;
+}
+.iconClosed {
+    background:url(../img/arrowClosed.png) no-repeat -5px !important;
+    background-size:20px !important;
+    width:20px;
+    height:20px;
+}
+
+#accordion a span.title {
+    float: left;
+    display: block;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+#accordion a span.ui-icon {
+    position: static;   
+    height: 20px;
+    margin-top: 0px; 
+    margin-top: 3px;
+}
+
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon{
+  right: .5em !important;
 }
 
 .videoThumb{
@@ -295,22 +325,20 @@ background: url(../img/shareThisIcons.png) 0 28px;
 
 #resources{
   background: url(../img/resourcesBackground.png) no-repeat center;
-  background-size: cover;  
+  background-size: auto, cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  height: 136px;
-  width: 340px;
-  margin-bottom: 73px;
-  margin-top: -207px;
-  position: absolute; 
-  bottom: 7px;
-  right: -20px;
-  padding-left: 20px;
+  height: auto;
+  width: 300px;
+  position: absolute;
+  bottom: 80px;
+
+  padding: 20px;
 }
 
 #resources h3{
-  margin: .5em 0 .5em 0;
+  margin: 0 0 .5em 0;
 }
 
 #resources ul{
@@ -322,6 +350,20 @@ background: url(../img/shareThisIcons.png) 0 28px;
 #resources ul li a{
   text-decoration: none;
   color: #fff
+}
+
+#aboutCPR360{
+  display: none;
+}
+
+#aboutCPR360 p{
+  height: auto;
+  width: 400px;
+  font-family: 'futura';
+  margin: 1em 1.4em;
+  color: #000;
+  font-size: 1em;
+  line-height: 1.5em;
 }
 
  /* FOOTER*/
@@ -349,24 +391,23 @@ footer, .push{
 }
 
 #copyright{
-  position: absolute;
-  top: 10px;
-  left: 450px;
+  margin-top: 20px;
+  float: left;
 }
 
 #follow{
-  position: absolute;
-  width: 300px;
+  margin-top: 20px;
+  float: right;
+  width: 150px;
   top: 0;
-  right: 550px;
-  height: 60px;
+  right: -10px;
   padding: 0;
 
 }
 
 #follow p{
-  width: 100px;
   margin: 0;
+  float: left;
 }
 
 #follow ul{
@@ -375,29 +416,36 @@ footer, .push{
   list-style: none;
   margin: 0;
   padding: 0;
+  float: right;
+}
+
+#follow ul li{
+  float: left;
 }
 
 #follow ul li a{
   width: 30px;
   height: 30px;
-  float: right;
+  float: left;
+  display: block;
 }
 
 #followFacebook{
-  background: url(../img/follow.png) 0 0px no repeat;
+  background: url(../img/follow.png) -10px 45px;
 }
 
 #followTwitter{
-  background: url(../img/follow.png) 0 30px no repeat;
+  background: url(../img/follow.png) 90px 45px;
 }
 
 #followYoutube{
-  background: url(../img/follow.png) 0 60px no repeat;
+  background: url(../img/follow.png) 45px 45px;
 }
 
 #footerWrap{
   width: 1000px;
   height: 60px;
   margin: auto;
+  position: relative;
 }
 

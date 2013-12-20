@@ -15,6 +15,7 @@
     <!--<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">-->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
@@ -24,8 +25,8 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="js/modernizr-2.6.2.min.js"></script>
-    <!--<script src="js/bootstrap.min.js"></script>-->
     <script src="js/custom.js"></script>
+    <script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   </head>
   <body>
@@ -37,9 +38,9 @@
       <header>
         <div id="headerWrap">
           <img src="img/headerLogo.png">
-          <div id="headerText">
+<!--           <div id="headerText">
             <p>A collaboration among F.I.E.R.C.E. (Foundation for International Emergency Medicine Education), First Responders Network, S.H.A.R.E. (Save Hearts in Arizona Registry & Education), HeartRescue Project, and ZOLL.</p>
-          </div>
+          </div> -->
         </div>
       </header>
 
@@ -147,16 +148,22 @@
 
           </div> <!-- end #accordionWrap -->
 
+          <div id="resources">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="mailto:info@cpr360.org" target="_top">info@cpr360.org</a></li>
+              <li><a class="fancybox" href="#aboutCPR360">About CPR360&deg;</a></li>
+              <li><a href="#">www.loremipsem.com</a></li>
+              <li><a href="#">www.loremipsem.com</a></li>
+              <li><a href="#">www.loremipsem.com</a></li>
+            </ul>
+          </div>          
+
         </div> <!-- end #accordionSidebar -->
         
-        <div id="resources">
-          <h3>Resources</h3>
-          <ul>
-            <li><a href="mailto:info@cpr360.org" target="_top">info@cpr360.org</a></li>
-            <li><a href="#">www.loremipsem.com</a></li>
-            <li><a href="#">www.loremipsem.com</a></li>
-            <li><a href="#">www.loremipsem.com</a></li>
-          </ul>
+
+        <div id="aboutCPR360">
+          <p>CPR360&deg; is a collaboration among F.I.E.R.C.E. (Foundation for International Emergency Medicine Education), First Responders Network, S.H.A.R.E. (Save Hearts in Arizona Registry & Education), HeartRescue Project, and ZOLL.</p>
         </div>
 
         <div class="push"></div>
@@ -167,7 +174,7 @@
         <div id="footerWrap">
           <p id="copyright">Copyright 2013 CPR360&deg;</p>
           <div id="follow">
-            <p>Follow CPR360&deg;</p>
+            <p>Follow</p>
             <ul>
               <li><a id="followFacebook" href=""></a></li>
               <li><a id="followTwitter" href=""></a></li>
