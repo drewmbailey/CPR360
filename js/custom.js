@@ -24,6 +24,14 @@ jQuery(function($){
 
   $( "#accordion" ).accordion({heightStyle: "content", icons: icons});
 
+  $( "#resources" ).accordion({heightStyle: "content", 
+    heightStyle: "content",
+    active: false, 
+    collapsible: true,
+    active: 1,
+    icons: icons
+   });
+
   $( "#comments" ).accordion({header: "h2",
     heightStyle: "content",
     active: false, 
@@ -31,7 +39,8 @@ jQuery(function($){
     active: 1,
     icons: icons
    });
-  
+
+
   // CHANGE VIDEO BY CLICKING THUMBNAIL LINK
   $('.vid_button').on('click', function(){
     console.log('video clicked');

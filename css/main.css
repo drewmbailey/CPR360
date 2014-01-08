@@ -308,6 +308,10 @@ background: url(../img/shareThisIcons.png) 0 28px;
   right: .5em !important;
 }
 
+#resources.ui-accordion h3, #resources.ui-accordion-header h3{
+  padding: 0;
+}
+
 .videoThumb{
   position: relative;
 }
