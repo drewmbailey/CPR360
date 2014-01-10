@@ -12,8 +12,6 @@
 
     <link rel="stylesheet" href="js/jquery-ui-1.10.3.custom.min.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <!--<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">-->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     
@@ -38,9 +36,6 @@
       <header>
         <div id="headerWrap">
           <img src="img/headerLogo.png">
-<!--           <div id="headerText">
-            <p>A collaboration among F.I.E.R.C.E. (Foundation for International Emergency Medicine Education), First Responders Network, S.H.A.R.E. (Save Hearts in Arizona Registry & Education), HeartRescue Project, and ZOLL.</p>
-          </div> -->
         </div>
       </header>
 
@@ -64,7 +59,7 @@
               <div id="sharePopup">
                 <ul>
                   <li><a href="http://twitter.com/home?status=http://youtu.be/-oTndxsUdnk"><div class="shareItems" id="twitterButton"></div></a></li>
-                  <li><a href=""><div class="shareItems" id="vimeoButton"></div></a></li>
+                  <li><a href="mailto:info@cpr360.org?Subject=Check%20out%20CPR360!"><div class="shareItems" id="mailButton"></div></a></li>
                   <li><a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://youtu.be/-oTndxsUdnk&p[images][0]=&p[title]=&p[summary]="><div class="shareItems" id="facebookButton"></div></a></li>
                   <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://youtu.be/DMPKLJhT8uQ&title=&summary=&source="><div class="shareItems" id="linkedinButton"></div></a></li>
                   <li><a href="https://www.tumblr.com/login?share_redirect_to=%2Fshare%2Flink%3Furl%3Dhttp%253A%252F%252Fyoutu.be%252FDMPKLJhT8uQ"><div class="shareItems" id="tumblrButton"></div></a></li>
@@ -82,12 +77,13 @@
               </div>
             </div> <!-- end #description -->    
             
-              <div id="comments">
-                <h2>Comments:</h2>
-                <div></div>
-              </div>
+            <div id="comments">
+              <h2>Comments:</h2>
+              <div></div>
+            </div>
 
-          </div>
+          </div> <!-- end #youtube content -->
+
         </main> <!-- end main -->
 
         <div id="accordionSidebar">
@@ -96,61 +92,84 @@
             <div id="accordion">
               <h3>Trailer</h3>
               <div>
-                <div class="videoThumb"><a id="mostRecent" class="vid_button" data-link="lQQfKWzyTDc" ><img src="http://i1.ytimg.com/vi/lQQfKWzyTDc/default.jpg" width="120"><img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png"></a></div>
-                <p>
-                
-                </p>
+                <div class="videoThumb">
+                  <a id="mostRecent" class="vid_button" data-link="lQQfKWzyTDc" >
+                    <img src="http://i1.ytimg.com/vi/lQQfKWzyTDc/default.jpg" width="120">
+                    <img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png">
+                  </a>
+                  <p>
+                  
+                  </p>
+                </div>
               </div>
+
               <h3>Section 1</h3>
               <div>
-                <div class="videoThumb"><a id="mostRecent" class="vid_button" data-link="DMPKLJhT8uQ" ><img src="http://i1.ytimg.com/vi/DMPKLJhT8uQ/default.jpg" width="120"><img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png"></a></div>
-                <p>
-                Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-                ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-                amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-                odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-                </p>
+                <div class="videoThumb">
+                  <a class="vid_button" data-link="DMPKLJhT8uQ" >
+                    <img src="http://i1.ytimg.com/vi/DMPKLJhT8uQ/default.jpg" width="120">
+                    <img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png">
+                  </a>
+                  <p>
+                  Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                  ut neque. 
+                  </p>
+                </div>
+
+                <div class="videoThumb">
+                  <a class="vid_button" data-link="8uWFu-4bZP8" >
+                    <img src="http://i1.ytimg.com/vi/8uWFu-4bZP8/default.jpg" width="120">
+                    <img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png">
+                  </a>
+                  <p>
+                  Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                  ut neque. 
+                  </p>
+                </div>
               </div>
+                
               <h3>Section 2</h3>
               <div>
-                <div class="videoThumb"><a class="vid_button" data-link="-oTndxsUdnk" ><img src="http://i1.ytimg.com/vi/-oTndxsUdnk/default.jpg" width="120"><img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png"></a></div>
-                <p>
-                Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-                purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-                velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-                suscipit faucibus urna.
-                </p>
+                <div class="videoThumb">
+                  <a class="vid_button" data-link="-oTndxsUdnk" >
+                    <img src="http://i1.ytimg.com/vi/-oTndxsUdnk/default.jpg" width="120">
+                    <img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png">
+                  </a>
+                  <p>
+                  Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                  purus. Vivamus hendrerit.
+                  </p>  
+                </div>
               </div>
+
               <h3>Section 3</h3>
               <div>
-                <div class="videoThumb"><a class="vid_button" data-link="q0kPYOzgNyQ" ><img src="http://i1.ytimg.com/vi/q0kPYOzgNyQ/default.jpg" width="120"><img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png"></a></div>
-                <p>
-                Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-                Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-                ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-                lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-                </p>
-                <ul>
-                  <li>List item one</li>
-                  <li>List item two</li>
-                  <li>List item three</li>
-                </ul>
+                <div class="videoThumb">
+                  <a class="vid_button" data-link="q0kPYOzgNyQ" >
+                    <img src="http://i1.ytimg.com/vi/q0kPYOzgNyQ/default.jpg" width="120">
+                    <img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png">
+                  </a>
+                  <p>
+                  Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                  Phasellus pellentesque purus in massa. Aenean in pede.
+                  </p>
+                </div>
               </div>
+
               <h3>Section 4</h3>
               <div>
-                <div class="videoThumb"><a class="vid_button" data-link="VMoex059t3E" ><img src="http://i1.ytimg.com/vi/VMoex059t3E/default.jpg" width="120"><img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png"></a></div>
-                <p>
-                Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-                et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-                faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-                mauris vel est.
-                </p>
-                <p>
-                Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-                inceptos himenaeos.
-                </p>
+                <div class="videoThumb">
+                  <a class="vid_button" data-link="VMoex059t3E" >
+                    <img src="http://i1.ytimg.com/vi/VMoex059t3E/default.jpg" width="120">
+                    <img class="thumbPlayOverlay" src="img/thumbnailPlayOverlay.png">
+                  </a>
+                  <p>
+                  Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                  et malesuada fames ac turpis egestas.
+                  </p>
+                </div>
               </div>
+
             </div> <!-- end #accordion -->
 
           </div> <!-- end #accordionWrap -->
@@ -185,9 +204,9 @@
           <div id="follow">
             <p>Follow</p>
             <ul>
-              <li><a id="followFacebook" href=""></a></li>
-              <li><a id="followTwitter" href=""></a></li>
-              <li><a id="followYoutube" href=""></a></li>
+              <li><a id="followFacebook" href="https://www.facebook.com/hashtag/CPR360" target="_blank"></a></li>
+              <li><a id="followTwitter" href="https://twitter.com/search?src=typd&q=%23CPR360" target="_blank"></a></li>
+              <li><a id="followYoutube" href="http://www.youtube.com/channel/UCP46VaaCc_hX6BJg15-ICkg?sub_confirmation=1" target="_blank"></a></li>
             </ul>
           </div>
         </div>

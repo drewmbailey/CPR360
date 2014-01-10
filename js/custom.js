@@ -3,7 +3,14 @@ jQuery(function($){
 
   //FANCYBOX
 
-  $(".fancybox").fancybox();
+  $(".fancybox").fancybox({
+    padding: 0,
+    helpers: {
+      overlay: {
+        locked: false
+      }
+    }
+  });
   
   //MAKE IFRAME FALL UNDER SOCIAL MEADIA POPUP
   // $('iframe').each(function(){
@@ -22,7 +29,10 @@ jQuery(function($){
    activeHeader: "iconOpen" // custom icon class
   };
 
-  $( "#accordion" ).accordion({heightStyle: "content", icons: icons});
+  $( "#accordion" ).accordion({heightStyle: "content", 
+    icons: icons, 
+    collapsible: true
+  });
 
   $( "#resources" ).accordion({heightStyle: "content", 
     heightStyle: "content",

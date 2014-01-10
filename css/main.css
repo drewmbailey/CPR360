@@ -158,8 +158,11 @@ iframe{
   background: url(../img/shareThisIcons.png) 0 3px;
 }
 
-#vimeoButton{
-  background: url(../img/shareThisIcons.png) 78px 3px;
+#mailButton{
+  background: url(../img/mail.png) no-repeat;
+  background-size: 30px;
+  margin-top: 5px;
+  height: 25px;
 }
 
 #facebookButton{
@@ -214,8 +217,8 @@ background: url(../img/shareThisIcons.png) 0 28px;
   color: #000;
 }
 
-.ui-accordion .ui-accordion-content{
-  padding-left: 0 !important;
+#resources.ui-accordion-content, #resources .ui-accordion-content {
+  padding: 0 !important;
 }
 
 #accordionWrap h2{
@@ -290,6 +293,19 @@ background: url(../img/shareThisIcons.png) 0 28px;
     height:20px;
 }
 
+#resources .iconOpen {
+    background:url(../img/arrowOpen_white.png) no-repeat !important;
+    background-size:20px !important;
+    width:20px;
+    height:20px;
+}
+#resources .iconClosed {
+    background:url(../img/arrowClosed_white.png) no-repeat -5px !important;
+    background-size:20px !important;
+    width:20px;
+    height:20px;
+}
+
 #accordion a span.title {
     float: left;
     display: block;
@@ -314,13 +330,14 @@ background: url(../img/shareThisIcons.png) 0 28px;
 
 .videoThumb{
   position: relative;
+  min-height: 110px;
 }
 
 .thumbPlayOverlay{
-  width: 100px;
+  width: 30px;
   position: absolute;
-  top: 15px;
-  left: 10px;
+  top: 30px;
+  left: 40px;
 }
 
 .vid_button img{
@@ -337,7 +354,6 @@ background: url(../img/shareThisIcons.png) 0 28px;
   width: 300px;
   position: absolute;
   bottom: 80px;
-
   padding: 20px;
 }
 
