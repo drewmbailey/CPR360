@@ -12,17 +12,6 @@ jQuery(function($){
     }
   });
   
-  //MAKE IFRAME FALL UNDER SOCIAL MEADIA POPUP
-  // $('iframe').each(function(){
-  //         var url = $(this).attr("src");
-  //         var char = "?";
-  //         if(url.indexOf("?") != -1){
-  //                 var char = "&";
-  //          }
-         
-  //         $(this).attr("src",url+char+"?wmode=transparent");
-  //   });
-
   // ACCORDION
   var icons = {
    header: "iconClosed",    // custom icon class
@@ -50,7 +39,6 @@ jQuery(function($){
     icons: icons
    });
 
-
   // CHANGE VIDEO BY CLICKING THUMBNAIL LINK
   $('.vid_button').on('click', function(){
     console.log('video clicked');
@@ -62,6 +50,8 @@ jQuery(function($){
     var URL = $(this).attr('data-link');
     var htm = '<iframe id="player" frameborder="0" allowfullscreen="1" title="YouTube video player" width="640" height="390" src="https://www.youtube.com/embed/' + URL + '?enablejsapi=1&wmode=transparent"></iframe>';
     var SetURL = 'http://gdata.youtube.com/feeds/api/videos/' + URL + '?v=2&alt=json';
+
+    window.location.hash = URL; //this sets hash to equal youtube ID
 
     console.log('URL = ' + URL);
     console.log('SetURL = ' + SetURL);
@@ -109,7 +99,7 @@ jQuery(function($){
     var shareList =
       '<ul>' 
         + '<li><a href="http://twitter.com/home?status=http://youtu.be/' + youtubeID + '" target="_blank"><div class="shareItems" id="twitterButton"></div></a></li>'
-        + '<li><a href=""  target="_blank"><div class="shareItems" id="vimeoButton"></div></a></li>'
+        + '<li><a href="mailto:info@cpr360.org?Subject=Check%20out%20CPR360!&body=I%20thought%20you%20might%20find%20this%20interesting:%20' + window.location + '"  target="_blank"><div class="shareItems" id="mailButton"></div></a></li>'
         + '<li><a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://youtu.be/' + youtubeID + '&p[images][0]=&p[title]=&p[summary]="  target="_blank"><div class="shareItems" id="facebookButton"></div></a></li>'
         + '<li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://youtu.be/' + youtubeID + '&title=&summary=&source="  target="_blank"><div class="shareItems" id="linkedinButton"></div></a></li>'
         + '<li><a href="https://www.tumblr.com/login?share_redirect_to=%2Fshare%2Flink%3Furl%3Dhttp%253A%252F%252Fyoutu.be%252F' + youtubeID + '"  target="_blank"><div class="shareItems" id="tumblrButton"></div></a></li>'
@@ -118,7 +108,6 @@ jQuery(function($){
 
     $("#sharePopup").html(shareList); 
     console.log(shareList);
-
   }
 
   // PARSE COMMENTS
@@ -146,30 +135,5 @@ jQuery(function($){
       }
     });
   }
-
-  // //SHARE LINK
-  // $("#shareButton").on("click", function(){
-  //   console.log("button clicked");
-  //   $("#sharePopup").show();
-  // });
-
-  // $(document).on("click", function(e) {
-  //   if (e.target.id != "shareButton" && !$("#shareButton").find(e.target).length) {
-  //     $("#sharePopup").hide();
-  //   }
-  // });
-
-  // var shareList =
-  //   '<ul>' 
-  //     + '<li><a href="http://twitter.com/home?status=http://youtu.be/' + youtubeID + '"><div class="shareItems" id="twitterButton"></div></a></li>'
-  //     + '<li><a href=""><div class="shareItems" id="vimeoButton"></div></a></li>'
-  //     + '<li><a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://youtu.be/-oTndxsUdnk&p[images][0]=&p[title]=&p[summary]="><div class="shareItems" id="facebookButton"></div></a></li>'
-  //     + '<li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://youtu.be/DMPKLJhT8uQ&title=&summary=&source="><div class="shareItems" id="linkedinButton"></div></a></li>'
-  //     + '<li><a href="https://www.tumblr.com/login?share_redirect_to=%2Fshare%2Flink%3Furl%3Dhttp%253A%252F%252Fyoutu.be%252FDMPKLJhT8uQ"><div class="shareItems" id="tumblrButton"></div></a></li>'
-  //     + '<li><a href="https://plus.google.com/share?url=http://youtu.be/-oTndxsUdnk"><div class="shareItems" id="gplusButton"></div></a></li>'
-  //   + '</ul>';
-
-  // $("#sharePopup").html(shareList); 
-  // console.log(shareList)
 
 });

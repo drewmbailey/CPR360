@@ -161,8 +161,8 @@ iframe{
 #mailButton{
   background: url(../img/mail.png) no-repeat;
   background-size: 30px;
-  margin-top: 5px;
-  height: 25px;
+  margin-top: 8px;
+  height: 22px;
 }
 
 #facebookButton{
