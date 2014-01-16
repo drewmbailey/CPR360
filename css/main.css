@@ -197,11 +197,24 @@ background: url(../img/shareThisIcons.png) 0 28px;
 }
 
 #comments{
-  min-height: 65px;
+  min-height: 87px;
   width: 600px;
   margin-top: 40px !important;
   margin: auto;
   border-top: solid 3px #5456a1;
+}
+
+#comments div{
+  padding-left: 10px;
+}
+
+#comments img:first-of-type{
+  margin-top: 20px;
+}
+
+#comments img{
+  float: left;
+  margin-right: 20px;
 }
 
 #comments h2{
@@ -215,6 +228,7 @@ background: url(../img/shareThisIcons.png) 0 28px;
 
 #comments p{
   color: #000;
+  margin-bottom: 50px;
 }
 
 #resources.ui-accordion-content, #resources .ui-accordion-content {

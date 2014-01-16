@@ -39,10 +39,19 @@ jQuery(function($){
     icons: icons
    });
 
+  //MAKE HASHTAG IN URL OPEN VIDEO
+  $(function(){
+     var hash = window.location.hash;
+     var anchor = $('a[href$="'+hash+'"]');
+     if (anchor.length > 0){
+        anchor.click();
+     }
+  });
+
   // CHANGE VIDEO BY CLICKING THUMBNAIL LINK
   $('.vid_button').on('click', function(){
     console.log('video clicked');
-    console.log('this = ' + $(this).html());
+    console.log('this = ' + $(this).html());   
 
     $('#accordion .vid_button').removeClass('active');
     $(this).addClass('active');
@@ -50,8 +59,6 @@ jQuery(function($){
     var URL = $(this).attr('data-link');
     var htm = '<iframe id="player" frameborder="0" allowfullscreen="1" title="YouTube video player" width="640" height="390" src="https://www.youtube.com/embed/' + URL + '?enablejsapi=1&wmode=transparent"></iframe>';
     var SetURL = 'http://gdata.youtube.com/feeds/api/videos/' + URL + '?v=2&alt=json';
-
-    window.location.hash = URL; //this sets hash to equal youtube ID
 
     console.log('URL = ' + URL);
     console.log('SetURL = ' + SetURL);
@@ -88,6 +95,9 @@ jQuery(function($){
       console.log("button clicked");
       //$("#sharePopup").css("display", "inline");
       $("#sharePopup").show();
+
+      
+
     });
 
     $(document).on("click", function(e) {
@@ -98,11 +108,11 @@ jQuery(function($){
 
     var shareList =
       '<ul>' 
-        + '<li><a href="http://twitter.com/home?status=http://youtu.be/' + youtubeID + '" target="_blank"><div class="shareItems" id="twitterButton"></div></a></li>'
-        + '<li><a href="mailto:info@cpr360.org?Subject=Check%20out%20CPR360!&body=I%20thought%20you%20might%20find%20this%20interesting:%20' + window.location + '"  target="_blank"><div class="shareItems" id="mailButton"></div></a></li>'
+        + '<li><a href="http://twitter.com/home?status=' + window.location + "#" + youtubeID + '" target="_blank"><div class="shareItems" id="twitterButton"></div></a></li>'
+        + '<li><a href="mailto:?Subject=Check%20out%20CPR360!&body=I%20thought%20you%20might%20find%20this%20interesting:%20' + window.location + '#' + youtubeID + '"  target="_blank"><div class="shareItems" id="mailButton"></div></a></li>'
         + '<li><a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://youtu.be/' + youtubeID + '&p[images][0]=&p[title]=&p[summary]="  target="_blank"><div class="shareItems" id="facebookButton"></div></a></li>'
-        + '<li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://youtu.be/' + youtubeID + '&title=&summary=&source="  target="_blank"><div class="shareItems" id="linkedinButton"></div></a></li>'
-        + '<li><a href="https://www.tumblr.com/login?share_redirect_to=%2Fshare%2Flink%3Furl%3Dhttp%253A%252F%252Fyoutu.be%252F' + youtubeID + '"  target="_blank"><div class="shareItems" id="tumblrButton"></div></a></li>'
+        + '<li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://zoll.com/cpr360/index.html&title=CPR360&summary=I%20thought%20you%20might%20like%20this%20video&source=CPR360"><div class="shareItems" id="linkedinButton"></div></a></li>'
+        + '<li><a href="http://www.tumblr.com/search/cpr360"  target="_blank"><div class="shareItems" id="tumblrButton"></div></a></li>'
         + '<li><a href="https://plus.google.com/share?url=http://youtu.be/' + youtubeID + '"  target="_blank"><div class="shareItems" id="gplusButton"></div></a></li>'
       + '</ul>';
 
@@ -116,6 +126,8 @@ jQuery(function($){
     var description = data.entry.media$group.media$description.$t;
     var viewcount = data.entry.yt$statistics.viewCount;
     var author = data.entry.author[0].name.$t;
+
+
     $('#title h2').html(title);
     $('#description').html('<b>Description</b>: ' + description);
     //$('#extrainfo').html('<b>Author</b>: ' + author + '<br/><b>Views</b>: ' + viewcount);
@@ -129,7 +141,7 @@ jQuery(function($){
       dataType: 'jsonp',
       success: function (data) {
       $.each(data.feed.entry, function(key, val) {
-        $('#comments div').append('<h4>' + val.author[0].name.$t + '</h4>' + '<p>' + val.content.$t + '</p>');
+        $('#comments div').append('<img src=https://i.ytimg.com/i/k3fMQ3kNXYg/s48-c-k-no/1.jpg>' + '<h4>' + val.author[0].name.$t + '</h4>' + '<p>' + val.content.$t + '</p>');
       });
       if ($(data.feed.entry).size() == 50) { getComments(commentsURL, startIndex + 50); }
       }
