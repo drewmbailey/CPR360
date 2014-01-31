@@ -2,7 +2,6 @@ jQuery(function($){
   console.log('document ready');
 
   //FANCYBOX
-
   $(".fancybox").fancybox({
     padding: 0,
     helpers: {
@@ -14,8 +13,8 @@ jQuery(function($){
   
   // ACCORDION
   var icons = {
-   header: "iconClosed",    // custom icon class
-   activeHeader: "iconOpen" // custom icon class
+    header: "iconClosed",    // custom icon class
+    activeHeader: "iconOpen" // custom icon class
   };
 
   $( "#accordion" ).accordion({heightStyle: "content", 
@@ -41,7 +40,7 @@ jQuery(function($){
 
   //MAKE HASHTAG IN URL OPEN VIDEO
   $(function(){
-     var hash = window.location.hash;
+     var hash = location.hash;
      var anchor = $('a[href$="'+hash+'"]');
      if (anchor.length > 0){
         anchor.click();
@@ -95,9 +94,6 @@ jQuery(function($){
       console.log("button clicked");
       //$("#sharePopup").css("display", "inline");
       $("#sharePopup").show();
-
-      
-
     });
 
     $(document).on("click", function(e) {
@@ -108,8 +104,8 @@ jQuery(function($){
 
     var shareList =
       '<ul>' 
-        + '<li><a href="http://twitter.com/home?status=' + window.location + "#" + youtubeID + '" target="_blank"><div class="shareItems" id="twitterButton"></div></a></li>'
-        + '<li><a href="mailto:?Subject=Check%20out%20CPR360!&body=I%20thought%20you%20might%20find%20this%20interesting:%20' + window.location + '#' + youtubeID + '"  target="_blank"><div class="shareItems" id="mailButton"></div></a></li>'
+        + '<li><a href="http://twitter.com/home?status=' + location + "#" + youtubeID + '" target="_blank"><div class="shareItems" id="twitterButton"></div></a></li>'
+        + '<li><a href="mailto:?Subject=Check%20out%20CPR360!&body=I%20thought%20you%20might%20find%20this%20interesting:%20' + location + "#" + youtubeID + '"><div class="shareItems" id="mailButton"></div></a></li>'
         + '<li><a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://youtu.be/' + youtubeID + '&p[images][0]=&p[title]=&p[summary]="  target="_blank"><div class="shareItems" id="facebookButton"></div></a></li>'
         + '<li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://zoll.com/cpr360/index.html&title=CPR360&summary=I%20thought%20you%20might%20like%20this%20video&source=CPR360"><div class="shareItems" id="linkedinButton"></div></a></li>'
         + '<li><a href="http://www.tumblr.com/search/cpr360"  target="_blank"><div class="shareItems" id="tumblrButton"></div></a></li>'

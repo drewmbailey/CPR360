@@ -50,6 +50,7 @@ h3{
 
 header{
   width: 100%;
+  min-width: 1024px;
   margin: 0 auto;
   background-color: black;
   border-bottom: solid 3px #5456a1;
@@ -159,10 +160,11 @@ iframe{
 }
 
 #mailButton{
-  background: url(../img/mail.png) no-repeat;
-  background-size: 30px;
-  margin-top: 8px;
-  height: 22px;
+  background: url(../img/mail.png);
+  background-repeat: no-repeat;
+  background-size: 26px;
+  margin: 6px 0 0 2px;
+  height: 20px;
 }
 
 #facebookButton{
@@ -222,7 +224,7 @@ background: url(../img/shareThisIcons.png) 0 28px;
   float: left;
   text-align: left;
   font-size: 1.5em;
-  margin: 1em 0 0 0;
+  margin: 1.8em 0 0 0;
   padding: 0;
 }
 
@@ -232,7 +234,8 @@ background: url(../img/shareThisIcons.png) 0 28px;
 }
 
 #resources.ui-accordion-content, #resources .ui-accordion-content {
-  padding: 0 !important;
+padding: 0 0 0 1em!important;
+text-indent: -1em;
 }
 
 #accordionWrap h2{
@@ -369,6 +372,9 @@ background: url(../img/shareThisIcons.png) 0 28px;
   position: absolute;
   bottom: 80px;
   padding: 20px;
+
+  /*IE backround size fix*/
+
 }
 
 #resources h3{
@@ -411,6 +417,7 @@ footer, .push{
   height: 60px;
   left: 0;
   width: 100%;
+  min-width: 1024px;
   margin: auto;
   border-top: solid 3px #5456a1;
   background: url("../img/footerBackground.png") no-repeat center; 
